@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     PlayerController pc;
+    public float gunPickUpDistance = 10f;
     public LayerMask whatIsGun;
     public GunManager gunManager;
     InputManager im;
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour
             {
                 print("gunPickUpPressed");
                 RaycastHit hit;
-                Physics.Raycast(transform.position, pc.cameraTransform.forward, out hit, 5, whatIsGun, QueryTriggerInteraction.Ignore);
+                Physics.Raycast(transform.position, pc.cameraTransform.forward, out hit, gunPickUpDistance, whatIsGun, QueryTriggerInteraction.Ignore);
 
 
 
@@ -53,6 +54,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        gunManager.GunUpdate();
+        gunManager.GunTransformUpdate();
     }
 }

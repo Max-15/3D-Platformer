@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         /////////////////////
         deltaPosition = Vector3.Distance(transform.position, lastPosition);
         StartCoroutine(addToSpeedAndRemove(deltaPosition));
-        speedText.SetText("<mspace=25>" + Math.f.RoundTenth(speedSmoothed) + "</mspace>" + " m/s");
+        speedText.SetText("<mspace=27>" + Math.f.RoundTenth(speedSmoothed) + "</mspace>");
         grounded = IsGrounded();
         /////////////////////
         lastPosition = transform.position;

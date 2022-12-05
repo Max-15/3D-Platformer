@@ -61,6 +61,9 @@ public class InputManager : MonoBehaviour
     public bool GunDroppedThisFrame(){
         return playerControls.Gun.DropGun.triggered;
     }
+    public bool IsTryingToShootGun(){
+        return playerControls.Gun.ShootGun.IsPressed();
+    }
     public bool PauseThisFrame(){
         return playerControls.Other.PauseMenu.triggered;
     }

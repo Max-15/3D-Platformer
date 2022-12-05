@@ -6,12 +6,18 @@ using Trinitrotoluene;
 [RequireComponent(typeof(PlayerController), typeof(Player))]
 public class GunManager : MonoBehaviour
 {
+    static GunManager _instance;
+    public static GunManager Instance {
+        get{return _instance;}
+    }
     PlayerController pc;
     public Transform gunParent;
+    public float bulletShootForce;
     [NonSerialized] public GunScript heldGun;
     Transform heldGunParent;
     private void Awake()
     {
+        _instance = this;
         heldGun = null;
         pc = GetComponent<PlayerController>();
     }
@@ -38,9 +44,10 @@ public class GunManager : MonoBehaviour
             heldGun = null;
             rb.isKinematic = false;
             rb.AddForce(pc.cameraTransform.forward * 10f, ForceMode.VelocityChange);
+            rb.AddTorque(pc.cameraTransform.forward * 10, ForceMode.VelocityChange);
         }
     }
-    public void GunUpdate()
+    public void GunTransformUpdate()
     {
         if (heldGun != null)
         {

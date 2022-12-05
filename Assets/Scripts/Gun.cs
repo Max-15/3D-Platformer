@@ -6,10 +6,10 @@ using UnityEngine;
 public class Gun : ScriptableObject
 {
     public enum SpecialAbility { None, Shotgun, RPG, RocketLauncher }
-    public Mesh model;
     public new string name;
     public float fireRate;
     public int ammo;
+    public float reloadTime;
     public int damage;
     public float bulletWeight;
     public float accuracy;

@@ -196,6 +196,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot Gun"",
+                    ""type"": ""Button"",
+                    ""id"": ""a84702a1-c499-4605-b5ce-b427b9437466"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -218,6 +227,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Drop Gun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9dfe1d66-f6bf-433b-9a34-a39593f97d67"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot Gun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -305,6 +325,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Gun = asset.FindActionMap("Gun", throwIfNotFound: true);
         m_Gun_PickUpGun = m_Gun.FindAction("Pick Up Gun", throwIfNotFound: true);
         m_Gun_DropGun = m_Gun.FindAction("Drop Gun", throwIfNotFound: true);
+        m_Gun_ShootGun = m_Gun.FindAction("Shoot Gun", throwIfNotFound: true);
         // Other
         m_Other = asset.FindActionMap("Other", throwIfNotFound: true);
         m_Other_Click = m_Other.FindAction("Click", throwIfNotFound: true);
@@ -436,12 +457,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IGunActions m_GunActionsCallbackInterface;
     private readonly InputAction m_Gun_PickUpGun;
     private readonly InputAction m_Gun_DropGun;
+    private readonly InputAction m_Gun_ShootGun;
     public struct GunActions
     {
         private @PlayerControls m_Wrapper;
         public GunActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @PickUpGun => m_Wrapper.m_Gun_PickUpGun;
         public InputAction @DropGun => m_Wrapper.m_Gun_DropGun;
+        public InputAction @ShootGun => m_Wrapper.m_Gun_ShootGun;
         public InputActionMap Get() { return m_Wrapper.m_Gun; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -457,6 +480,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @DropGun.started -= m_Wrapper.m_GunActionsCallbackInterface.OnDropGun;
                 @DropGun.performed -= m_Wrapper.m_GunActionsCallbackInterface.OnDropGun;
                 @DropGun.canceled -= m_Wrapper.m_GunActionsCallbackInterface.OnDropGun;
+                @ShootGun.started -= m_Wrapper.m_GunActionsCallbackInterface.OnShootGun;
+                @ShootGun.performed -= m_Wrapper.m_GunActionsCallbackInterface.OnShootGun;
+                @ShootGun.canceled -= m_Wrapper.m_GunActionsCallbackInterface.OnShootGun;
             }
             m_Wrapper.m_GunActionsCallbackInterface = instance;
             if (instance != null)
@@ -467,6 +493,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @DropGun.started += instance.OnDropGun;
                 @DropGun.performed += instance.OnDropGun;
                 @DropGun.canceled += instance.OnDropGun;
+                @ShootGun.started += instance.OnShootGun;
+                @ShootGun.performed += instance.OnShootGun;
+                @ShootGun.canceled += instance.OnShootGun;
             }
         }
     }
@@ -532,6 +561,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnPickUpGun(InputAction.CallbackContext context);
         void OnDropGun(InputAction.CallbackContext context);
+        void OnShootGun(InputAction.CallbackContext context);
     }
     public interface IOtherActions
     {
