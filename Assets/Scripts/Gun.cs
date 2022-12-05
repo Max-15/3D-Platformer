@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Gun")]
 public class Gun : ScriptableObject
 {
     public enum SpecialAbility { None, Shotgun, RPG, RocketLauncher }

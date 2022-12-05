@@ -30,8 +30,10 @@ public class PlayerController : MonoBehaviour
     float deltaPosition;
     float speed;
     float speedSmoothed;
+    WaitForSeconds waitASec;
     private void Start()
     {
+        waitASec = new WaitForSeconds(1);
         lastPosition = transform.position;
 
         Cursor.visible = false;
@@ -112,8 +114,6 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded()
     {
         Collider[] colliders = Physics.OverlapSphere(groundCheck.transform.position, groundCheck.radius, whatIsGround, QueryTriggerInteraction.Ignore);
-        if (colliders.Length > 0) print("IS GROUNDED on " + colliders[0].gameObject.name);
-        else print("IS NOT GROUNDED");
         return colliders.Length > 0;
     }
     void CounterMovement(float magnitude)
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator addToSpeedAndRemove(float addition){
         speed += addition;
-        yield return new WaitForSeconds(1);
+        yield return waitASec;
         speed -= addition;
     }
 }

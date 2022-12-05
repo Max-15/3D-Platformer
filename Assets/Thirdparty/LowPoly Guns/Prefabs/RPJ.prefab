@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 660537340789195362}
   - component: {fileID: -7355987953201997711}
   - component: {fileID: 7618078692913772219}
-  m_Layer: 0
+  - component: {fileID: -2846259128834552704}
+  m_Layer: 7
   m_Name: RPJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +66,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2846259128834552704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171527776781687000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04286b1710bd5834e90e8801bd35e0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &464400116022313441
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +89,7 @@ GameObject:
   - component: {fileID: 3996150317463760819}
   - component: {fileID: 6799553792856328811}
   - component: {fileID: 3246197236049482415}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +172,7 @@ GameObject:
   - component: {fileID: 2202451986669702914}
   - component: {fileID: 6250670888017485472}
   - component: {fileID: 3744843737536380597}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}

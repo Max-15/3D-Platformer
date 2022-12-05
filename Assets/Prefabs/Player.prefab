@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 997675928150161942}
   - component: {fileID: 997675928150161944}
   - component: {fileID: 997675928150161943}
+  - component: {fileID: 199770964142163767}
   - component: {fileID: 9145528950999949350}
   - component: {fileID: 8585707008177636138}
-  - component: {fileID: 199770964142163767}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -161,6 +161,22 @@ MonoBehaviour:
   grab: {fileID: 997675928150161944}
   speedText: {fileID: 0}
   cameraTransform: {fileID: 0}
+--- !u!114 &199770964142163767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997675928150161936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6aaed8b023881e488a22432d0b3a609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsGun:
+    serializedVersion: 2
+    m_Bits: 128
+  gunManager: {fileID: 8585707008177636138}
 --- !u!120 &9145528950999949350
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -272,19 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1780c94c3f7a3df42a127f97009c6c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldGun: {fileID: 0}
---- !u!114 &199770964142163767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997675928150161936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6aaed8b023881e488a22432d0b3a609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  gunParent: {fileID: 997675928150161940}
 --- !u!1 &997675928701564357
 GameObject:
   m_ObjectHideFlags: 0
