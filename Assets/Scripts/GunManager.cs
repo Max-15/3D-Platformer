@@ -32,20 +32,20 @@ public class GunManager : MonoBehaviour
     {
         if (heldGun != null)
         {
-            Rigidbody rb;
-            rb = heldGun.gameObject.GetComponent<Rigidbody>();
+            Rigidbody rb = heldGun.gameObject.GetComponent<Rigidbody>();
             Collider collider = heldGun.GetComponent<Collider>();
             collider.enabled = true;
             heldGun = null;
-
             rb.isKinematic = false;
+            rb.AddForce(pc.cameraTransform.forward * 10f, ForceMode.VelocityChange);
         }
     }
     public void GunUpdate()
     {
         if (heldGun != null)
         {
-            heldGun.transform.rotation = Quaternion.RotateTowards(heldGun.transform.rotation, Quaternion.LookRotation(-pc.cameraTransform.right * 0.7f, pc.cameraTransform.up), 300 * Time.deltaTime);
+            heldGun.transform.localScale = new Vector3(1,1,1);
+            heldGun.transform.rotation = Quaternion.RotateTowards(heldGun.transform.rotation, Quaternion.LookRotation(-pc.cameraTransform.right * 0.7f, pc.cameraTransform.up), 3000 * Time.deltaTime);
             heldGun.transform.position = pc.cameraTransform.position + (pc.cameraTransform.forward * 1f) + (pc.cameraTransform.right * 0.7f) + ((-pc.cameraTransform.up) * 0.3f);
         }
     }
