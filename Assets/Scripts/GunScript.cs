@@ -11,16 +11,18 @@ public class GunScript : MonoBehaviour
     public Gun gunStats;
     public GameObject shotParticles;
 
-    int currentAmmo;
-    float fireTimer = 0;
-    float reloadTimer = 0;
+    [System.NonSerialized] public int currentAmmo;
+     [System.NonSerialized] public float fireTimer = 0;
+    [System.NonSerialized] public float reloadTimer = 0;
     bool canFire;
+    float timeSinceFire = 0;
     private void Start()
     {
         pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
         gunManager = GunManager.Instance;
         canFire = false;
+        timeSinceFire = 0;
         fireTimer = 0;
         reloadTimer = 0;
         currentAmmo = gunStats.ammo;
@@ -44,6 +46,7 @@ public class GunScript : MonoBehaviour
             bulletRb.AddForce(pc.cameraTransform.forward.normalized * gunManager.bulletShootForce);
             currentAmmo--;
             fireTimer = 0;
+            timeSinceFire = 0;
             GameObject particleGameobject = Instantiate(shotParticles);
             particleGameobject.transform.position = bulletOrigin.position;
             particleGameobject.GetComponent<ParticleSystem>().Play();
@@ -52,6 +55,7 @@ public class GunScript : MonoBehaviour
     public void Reload()
     {
         currentAmmo += 1;
+        reloadTimer = 0;
         //play a sound
     }
     public void GunUpdate(){
@@ -60,7 +64,8 @@ public class GunScript : MonoBehaviour
         }
 
         fireTimer += Time.deltaTime;
-        if (currentAmmo < gunStats.ammo) reloadTimer += Time.deltaTime;
+        timeSinceFire += Time.deltaTime;
+        if (currentAmmo < gunStats.ammo && timeSinceFire > gunStats.fireRate + 1) reloadTimer += Time.deltaTime;
 
         if (fireTimer > gunStats.fireRate && currentAmmo > 0){
             canFire = true;

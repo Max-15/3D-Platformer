@@ -65,6 +65,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        gunManager.GunTransformUpdate();
+        gunManager.GunManagerUpdate();
     }
 }

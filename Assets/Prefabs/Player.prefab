@@ -291,6 +291,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunParent: {fileID: 997675928150161940}
   bulletShootForce: 1000
+  ammoText: {fileID: 0}
+  ammoGroup: {fileID: 0}
+  ammoIcon: {fileID: 2109103413110322452, guid: 47e10182a26fbdb4eb2bf9e40ea5e091,
+    type: 3}
+  reloadBar: {fileID: 0}
+  gunStatsGroup: {fileID: 0}
 --- !u!1 &997675928701564357
 GameObject:
   m_ObjectHideFlags: 0
