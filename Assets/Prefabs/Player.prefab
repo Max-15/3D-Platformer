@@ -158,7 +158,6 @@ MonoBehaviour:
   jumpHeight: 1
   eyeLevel: {fileID: 997675928701564358}
   groundCheck: {fileID: 997675928905556509}
-  grab: {fileID: 997675928150161944}
   speedText: {fileID: 0}
   cameraTransform: {fileID: 0}
 --- !u!114 &199770964142163767
@@ -173,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6aaed8b023881e488a22432d0b3a609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grab: {fileID: 997675928150161944}
   gunPickUpDistance: 30
   whatIsGun:
     serializedVersion: 2

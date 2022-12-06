@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class Player : MonoBehaviour
 {
+    [SerializeField] Grab grab;
     PlayerController pc;
     public float gunPickUpDistance = 10f;
     public LayerMask whatIsGun;
@@ -16,6 +17,16 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if (im.Grabbing() && gunManager.heldGun == null)
+        {
+            grab.GrabObject();
+        }
+        else
+        {
+            if (grab.objectGrabbing != null)
+                grab.StopGrab();
+        }
+
         if (im.PauseThisFrame())
         {
             Trinitrotoluene.Functions.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);

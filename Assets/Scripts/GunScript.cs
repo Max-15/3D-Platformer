@@ -9,6 +9,8 @@ public class GunScript : MonoBehaviour
     public GameObject bullet;
     public Transform bulletOrigin;
     public Gun gunStats;
+    public GameObject shotParticles;
+
     int currentAmmo;
     float fireTimer = 0;
     float reloadTimer = 0;
@@ -35,13 +37,16 @@ public class GunScript : MonoBehaviour
         if (canFire)
         {
             //play a sound
+            //particle effect
             //fire things
-
             GameObject bulletInstance = Instantiate(bullet, bulletOrigin.position, bulletOrigin.rotation);
             Rigidbody bulletRb = bulletInstance.GetComponent<Rigidbody>();
             bulletRb.AddForce(pc.cameraTransform.forward.normalized * gunManager.bulletShootForce);
             currentAmmo--;
             fireTimer = 0;
+            GameObject particleGameobject = Instantiate(shotParticles);
+            particleGameobject.transform.position = bulletOrigin.position;
+            particleGameobject.GetComponent<ParticleSystem>().Play();
         }
     }
     public void Reload()

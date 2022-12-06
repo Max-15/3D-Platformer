@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     [SerializeField] Transform eyeLevel;
     [SerializeField] SphereCollider groundCheck;
-    [SerializeField] Grab grab;
+
     [SerializeField] TMP_Text speedText;
     private Rigidbody rb;
 
@@ -100,15 +100,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, Mathf.Sqrt(jumpHeight * -3.0f * gravityValue), rb.velocity.z);
         }
 
-        if (im.Grabbing())
-        {
-            grab.GrabObject();
-        }
-        else
-        {
-            if (grab.objectGrabbing != null)
-                grab.StopGrab();
-        }
         lastYposition = transform.position.y;
     }
     public bool IsGrounded()
