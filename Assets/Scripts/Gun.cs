@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Gun")]
 public class Gun : ScriptableObject
 {
-    public enum SpecialAbility { None, Shotgun, RPG, RocketLauncher }
+    public enum SpecialAbility { None, MultiFire, Boom }
     public new string name;
     public float fireRate;
     [Range(0, 30)] public int ammo;
@@ -14,4 +14,9 @@ public class Gun : ScriptableObject
     public float bulletWeight;
     public float accuracy;
     public SpecialAbility ability;
+
+    [Header("Ability Stats")]
+    public float boomRadius = 4f;
+    public float boomKnockbackForce = 100f;
+    public int bulletsPerShot = 1;
 }

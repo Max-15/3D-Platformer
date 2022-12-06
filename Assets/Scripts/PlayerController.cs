@@ -120,8 +120,8 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(counterForce.x, 0, counterForce.y);
     }
     public IEnumerator addToSpeedAndRemove(float addition){
-        speed += addition;
+        speed += (addition / 2f);
         yield return waitASec;
-        speed -= addition;
+        speed -= (addition / 2f);
     }
 }

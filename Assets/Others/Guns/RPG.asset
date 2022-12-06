@@ -20,3 +20,6 @@ MonoBehaviour:
   bulletWeight: 1000
   accuracy: 0
   ability: 2
+  boomRadius: 4
+  boomKnockbackForce: 100
+  bulletsPerShot: 1
