@@ -49,7 +49,14 @@ public class PlayerController : MonoBehaviour
         /////////////////////
         deltaPosition = Vector3.Distance(transform.position, lastPosition);
         StartCoroutine(addToSpeedAndRemove(deltaPosition));
-        speedText.SetText("<mspace=27>" + Math.f.RoundTenth(speedSmoothed) + "</mspace>");
+        if (speedSmoothed > 50)
+        {
+            speedText.SetText("<color=#FF7900><mspace=27>" + Math.f.RoundTenth(speedSmoothed) + "</mspace>");
+        }
+        else
+        {
+            speedText.SetText("<mspace=27>" + Math.f.RoundTenth(speedSmoothed) + "</mspace>");
+        }
         grounded = IsGrounded();
         /////////////////////
         lastPosition = transform.position;
@@ -89,7 +96,9 @@ public class PlayerController : MonoBehaviour
                 if (movement.magnitude > 0)
                     CounterMovement(baseSpeed * 0.3f);
                 else CounterMovement(baseSpeed);
-            } else {
+            }
+            else
+            {
                 CounterMovement(baseSpeed * 0.2f);
             }
             transform.localScale = new Vector3(1, 1.5f, 1);
@@ -119,9 +128,10 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(counterForce.x, 0, counterForce.y);
     }
-    public IEnumerator addToSpeedAndRemove(float addition){
-        speed += (addition / 2f);
+    public IEnumerator addToSpeedAndRemove(float addition)
+    {
+        speed += (addition);
         yield return waitASec;
-        speed -= (addition / 2f);
+        speed -= (addition);
     }
 }

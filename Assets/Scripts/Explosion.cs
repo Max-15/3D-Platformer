@@ -15,6 +15,7 @@ public class Explosion : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        float distance = Vector3.Distance(other.transform.position, transform.position);
         print("explosion found " + other.gameObject.name);
         if ((boomable & (1 << other.gameObject.layer)) != 0)
         {
@@ -31,9 +32,10 @@ public class Explosion : MonoBehaviour
                 }
                 print("explosion knocked " + other.gameObject.name + " back");
             }
-            // if(other.TryGetComponent<Enemy>(out Enemy enemy)){
-            //     enemy.TakeDamage(stats.damage)
-            // }
+            if(other.TryGetComponent<Health>(out Health enemy)){
+                
+                enemy.TakeDamage(Mathf.RoundToInt(Mathf.Lerp(0, stats.damage, 1 - (distance / stats.boomRadius))));
+            }
         }
     }
     private void Update()

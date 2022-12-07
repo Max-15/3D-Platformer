@@ -80,6 +80,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3775707157186214730, guid: c51d32f426cb0d54e916c716f2125d96,
         type: 3}
+    - target: {fileID: 3491693731670293112, guid: fd977c71024b3c0449741f6d1454f7c7,
+        type: 3}
+      propertyPath: bulletHitEnemyParticles
+      value: 
+      objectReference: {fileID: 3775707157186214730, guid: c51d32f426cb0d54e916c716f2125d96,
+        type: 3}
     - target: {fileID: 6033154828501419910, guid: fd977c71024b3c0449741f6d1454f7c7,
         type: 3}
       propertyPath: m_Name

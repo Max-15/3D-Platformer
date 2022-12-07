@@ -17,6 +17,13 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        //////////////////////////
+        if(im.GunPickedUpThisFrame()){
+            GetComponent<PlayerHealth>().TakeDamage(4);
+            print("called it");
+        }
+        //////////////////////////
+
         if (im.Grabbing() && gunManager.heldGun == null)
         {
             grab.GrabObject();

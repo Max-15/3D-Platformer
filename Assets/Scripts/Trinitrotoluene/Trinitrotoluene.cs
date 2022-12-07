@@ -93,6 +93,16 @@ namespace Trinitrotoluene
             {
                 return UnityEngine.Random.Range(min, max);
             }
+            public static float Fit(float numerator, float denominator)
+            {
+                float division = numerator / denominator;
+                return Mathf.Floor(division);
+            }
+            public static int FitToInt(float numerator, float denominator)
+            {
+                float division = numerator / denominator;
+                return Mathf.FloorToInt(division);
+            }
         }
         public static class i
         {
@@ -111,31 +121,31 @@ namespace Trinitrotoluene
         public static class v2
         {
             /// <summary>
-            /// Returns a random number for each value in the vector between the minimum and maximum for that value.
+            /// Returns a random number from each of the two inputs, (x min - x max, y min - y max).
             /// </summary>
-            public static Vector2 Random(Vector2 min, Vector2 max)
+            public static Vector2 Random(Vector2 x, Vector2 y)
             {
-                return new Vector2(UnityEngine.Random.Range(min.x, max.x), UnityEngine.Random.Range(min.y, max.y));
+                return new Vector2(UnityEngine.Random.Range(x.x, x.y), UnityEngine.Random.Range(y.x, y.y));
             }
         }
         public static class v3
         {
             /// <summary>
-            /// Returns a random number for each value in the vector between the minimum and maximum for that value.
+            /// Returns a random number from each of the three inputs, (x min - x max, y min - y max, z min - z max).
             /// </summary>
-            public static Vector3 Random(Vector3 min, Vector3 max)
+            public static Vector3 Random(Vector2 x, Vector2 y, Vector2 z)
             {
-                return new Vector3(UnityEngine.Random.Range(min.x, max.x), UnityEngine.Random.Range(min.y, max.y), UnityEngine.Random.Range(min.z, max.z));
+                return new Vector3(UnityEngine.Random.Range(x.x, x.y), UnityEngine.Random.Range(y.x, y.y), UnityEngine.Random.Range(z.x, z.y));
             }
         }
         public static class v4
         {
             /// <summary>
-            /// Returns a random number for each value in the vector between the minimum and maximum for that value.
+            /// Returns a random number from each of the four inputs, (x min - x max, y min - y max, z min - z max, w min - w max).
             /// </summary>
-            public static Vector4 Random(Vector4 min, Vector4 max)
+            public static Vector3 Random(Vector2 x, Vector2 y, Vector2 z, Vector2 w)
             {
-                return new Vector4(UnityEngine.Random.Range(min.x, max.x), UnityEngine.Random.Range(min.y, max.y), UnityEngine.Random.Range(min.z, max.z), UnityEngine.Random.Range(min.w, max.w));
+                return new Vector4(UnityEngine.Random.Range(x.x, x.y), UnityEngine.Random.Range(y.x, y.y), UnityEngine.Random.Range(z.x, z.y), UnityEngine.Random.Range(w.x, w.y));
             }
         }
     }

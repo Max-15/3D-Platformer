@@ -88,7 +88,7 @@ public class GunManager : MonoBehaviour
 
             heldGun.transform.localScale = new Vector3(1,1,1);
             heldGun.transform.rotation = Quaternion.RotateTowards(heldGun.transform.rotation, Quaternion.LookRotation(-pc.cameraTransform.right * 0.7f, pc.cameraTransform.up), 3000 * Time.deltaTime);
-            heldGun.transform.position = pc.cameraTransform.position + (pc.cameraTransform.forward * 1f) + (pc.cameraTransform.right * 0.7f) + ((-pc.cameraTransform.up) * 0.3f);
+            heldGun.transform.position = pc.cameraTransform.position + (pc.cameraTransform.forward * 1f) + (pc.cameraTransform.right * 0.45f) + ((-pc.cameraTransform.up) * 0.3f);
         } else {
             gunStatsGroup.alpha += Functions.f.MoveTowards(gunStatsGroup.alpha, 0, 0.1f);
         }

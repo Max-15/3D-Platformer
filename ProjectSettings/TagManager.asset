@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - Gun
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Front
     uniqueID: 3296656137
+    locked: 0
+  - name: UI
+    uniqueID: 334554521
     locked: 0

@@ -239,7 +239,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletCollideParticles: {fileID: 9170792308186722306, guid: a309d893e1bae084f9986dbc9cbe83ba,
     type: 3}
+  bulletHitEnemyParticles: {fileID: 9170792308186722306, guid: a309d893e1bae084f9986dbc9cbe83ba,
+    type: 3}
   whatKillsBullet:
     serializedVersion: 2
     m_Bits: 2147483647
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
   explosionGameObject: {fileID: 0}
