@@ -41,7 +41,7 @@ public class Grab : MonoBehaviour
                 grabJoint.minDistance = 0f;
                 grabJoint.maxDistance = 0f;
                 grabJoint.damper = 4;
-                grabJoint.spring = 40;
+                grabJoint.spring = 60;
                 grabJoint.massScale = 5;
                 
                 objectOldDrags.x = objectGrabbing.drag;

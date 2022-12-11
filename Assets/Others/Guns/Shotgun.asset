@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Shotgun
   fireRate: 1
-  ammo: 5
-  reloadTime: 3
+  ammo: 36
+  reloadTime: 0.2
   damage: 5
-  bulletWeight: 10
-  accuracy: 0
-  ability: 1
+  useGravity: 0
+  accuracy: 0.4
+  ability: 0
+  bulletsPerShot: 6
+  boomRadius: 0
+  boomKnockbackForce: 0

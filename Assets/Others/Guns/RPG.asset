@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: RPG
   m_EditorClassIdentifier: 
   name: RPG
-  fireRate: 3
+  fireRate: 2
   ammo: 3
-  reloadTime: 5
+  reloadTime: 2
   damage: 50
-  bulletWeight: 1000
-  accuracy: 0
-  ability: 2
+  useGravity: 1
+  accuracy: 0.3
+  ability: 1
+  bulletsPerShot: 1
   boomRadius: 4
   boomKnockbackForce: 100
-  bulletsPerShot: 1

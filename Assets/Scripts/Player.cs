@@ -72,6 +72,9 @@ public class Player : MonoBehaviour
             }
         }
 
+        
+    }
+    private void LateUpdate() {
         gunManager.GunManagerUpdate();
     }
 }

@@ -140,7 +140,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8105093614528831879}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -162,6 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6033154828501419910, guid: fd977c71024b3c0449741f6d1454f7c7, type: 3}
   bulletOrigin: {fileID: 7436721413705888694}
-  gunStats: {fileID: 0}
+  gunStats: {fileID: 11400000, guid: 66149598f8a6f8744a37d68a25ec8672, type: 2}
   shotParticles: {fileID: 5158490400815511095, guid: 8d63f07fbd593454e80be1809ec76773,
     type: 3}

@@ -9,16 +9,20 @@ public class Bullet : MonoBehaviour
     public GameObject bulletHitEnemyParticles;
     public LayerMask whatKillsBullet;
     public LayerMask whatIsEnemy;
+    public Rigidbody rb;
 
     [Header("Special")]
     public GameObject explosionGameObject;
-
+    private void Start() {
+        rb.useGravity = stats.useGravity;
+    }
     private void OnCollisionEnter(Collision other)
     {
         if ((whatKillsBullet & (1 << other.gameObject.layer)) != 0)
         {
             if (stats.ability == Gun.SpecialAbility.Boom)
             {
+                print("BOOM!");
                 explosionGameObject.GetComponent<Explosion>().stats = stats;
                 explosionGameObject.transform.SetParent(null);
                 explosionGameObject.SetActive(true);

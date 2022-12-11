@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 807869552583913556, guid: 74cba5e68b644c248af6d8f35f8469c0, type: 3}
-  deathParticles: {fileID: 0}
+  deathParticles: {fileID: 1979959246427484550, guid: 232a6d7ce100fb04285777ad0c7ebb1a,
+    type: 3}

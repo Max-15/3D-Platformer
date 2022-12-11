@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grab: {fileID: 997675928150161944}
-  gunPickUpDistance: 30
+  gunPickUpDistance: 60
   whatIsGun:
     serializedVersion: 2
     m_Bits: 128
@@ -290,8 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1780c94c3f7a3df42a127f97009c6c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunParent: {fileID: 997675928150161940}
-  bulletShootForce: 1000
+  bulletShootForce: 50
+  bulletSpreadMultiplier: 3
+  gunParent: {fileID: 0}
   ammoText: {fileID: 0}
   ammoGroup: {fileID: 0}
   reloadBar: {fileID: 0}

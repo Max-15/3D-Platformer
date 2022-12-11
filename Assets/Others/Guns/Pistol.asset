@@ -17,6 +17,9 @@ MonoBehaviour:
   ammo: 8
   reloadTime: 1
   damage: 5
-  bulletWeight: 100
-  accuracy: 80
+  useGravity: 0
+  accuracy: 0.7
   ability: 0
+  boomRadius: 0
+  boomKnockbackForce: 0
+  bulletsPerShot: 1
